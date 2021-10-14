@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const TableHeader = () => { 
@@ -24,15 +25,23 @@ const TableBody = props => {
                 <td><button onClick={() => props.removeLink(index)}>Delete</button></td>
             </tr>
         );
-    });
+   });
 
     return <tbody>{rows}</tbody>;
 }
 
 const Table = (props) => {
-//    const { linkData, removeLink } = props;
-    {/*TODO - return <table> component, TableHeader and TableBody  */}
 
+    const { linkData, removeLink } = props;
+    {
+        return (
+            <table>
+                <TableHeader/>
+                <TableBody linkData={linkData} removeLink={removeLink}/>
+            </table>
+        );
+    }
+    
 }
 
 export default Table;
